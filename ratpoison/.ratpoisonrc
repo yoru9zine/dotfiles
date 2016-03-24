@@ -1,0 +1,27 @@
+execrpws init 9 -k
+
+bind c exec termite
+bind b exec chromium
+bind e exec emacs
+bind v ratclick 2
+bind C-v ratclick 2
+bind C-K delete
+
+bind h focusleft
+bind C-h focusleft
+bind l focusright
+bind C-l focusright
+bind k focusup
+bind C-k focusup
+bind j focusdown
+bind C-j focusdown
+
+bind F1 exec rpws 1
+bind F2 exec rpws 2
+bind F3 exec rpws 3
+bind F4 exec rpws 4
+bind F5 exec rpws 5
+bind F6 exec rpws 6
+bind F7 exec rpws 7
+bind F8 exec rpws 8
+bind F9 exec rpws 9

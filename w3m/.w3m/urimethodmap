@@ -1,0 +1,4 @@
+#defsearch :google, "UTF-8", "http://www.google.com/search?q=%s&hl=ja&num=100"
+#defalias :g, :google
+g: file:/cgi-bin/google.cgi?q=%s
+
