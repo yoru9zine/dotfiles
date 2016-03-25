@@ -185,7 +185,3 @@
 (require 'undohist)
 (undohist-initialize)
 (global-undo-tree-mode t)
-
-;; japanese input
-(require 'uim-leim)
-(setq default-input-method "japanese-anthy-utf8-uim")
