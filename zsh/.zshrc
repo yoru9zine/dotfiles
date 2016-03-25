@@ -52,3 +52,12 @@ export PATH="$HOME/.cask/bin:$PATH"
 alias ls='ls --color=auto'
 
 test -e ~/.zshrc_local && source ~/.zshrc_local
+
+function ghqlist {
+  ghq list -p | perl -nlpe 's[.*src/(.*)][$1\0$_]' | peco --null
+}
+function pcd {
+  cd `ghqlist`
+}
+zle -N pcd
+bindkey '^xp' pcd
