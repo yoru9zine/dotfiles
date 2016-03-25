@@ -1,0 +1,4 @@
+[ghq]
+  root = ~/src
+  root = ~/go/src
+  root = ~/dotfiles

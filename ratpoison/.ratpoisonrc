@@ -1,11 +1,11 @@
-execrpws init 9 -k
+exec rpws init 9 -k
 
 bind c exec termite
 bind b exec chromium
-bind e exec emacs
+bind e exec sh -c 'LC_CTYPE=ja_JP.UTF8 emacs'
 bind v ratclick 2
 bind C-v ratclick 2
-bind C-K delete
+bind M-k delete
 
 bind h focusleft
 bind C-h focusleft
@@ -16,12 +16,15 @@ bind C-k focusup
 bind j focusdown
 bind C-j focusdown
 
-bind F1 exec rpws 1
-bind F2 exec rpws 2
-bind F3 exec rpws 3
-bind F4 exec rpws 4
-bind F5 exec rpws 5
-bind F6 exec rpws 6
-bind F7 exec rpws 7
-bind F8 exec rpws 8
-bind F9 exec rpws 9
+bind L rpwsn
+bind H rpwsp
+
+bind M-1 exec rpws 1
+bind M-2 exec rpws 2
+bind M-3 exec rpws 3
+bind M-4 exec rpws 4
+bind M-5 exec rpws 5
+bind M-6 exec rpws 6
+bind M-7 exec rpws 7
+bind M-8 exec rpws 8
+bind M-9 exec rpws 9

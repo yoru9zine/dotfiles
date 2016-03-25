@@ -37,8 +37,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # select prompt -p
-#prompt fade white grey blue
-prompt clint
+prompt fade blue
 
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
@@ -49,3 +48,7 @@ export PATH="$HOME/go/bin:$PATH"
 export GOPATH="$HOME/go"
 
 export PATH="$HOME/.cask/bin:$PATH"
+
+alias ls='ls --color=auto'
+
+test -e ~/.zshrc_local && source ~/.zshrc_local

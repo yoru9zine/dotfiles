@@ -47,3 +47,5 @@
 (depends-on "ido")
 (depends-on "ido-ubiquitous")
 (depends-on "ido-vertical-mode")
+(depends-on "undohist")
+(depends-on "undo-tree")

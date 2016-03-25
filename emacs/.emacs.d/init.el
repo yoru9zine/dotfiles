@@ -52,6 +52,20 @@
 (global-set-key (kbd "C-S-l") 'windmove-right)
 
 ;; misc
+(defun my-end-of-line ()
+  (interactive)
+  (end-of-line)
+  (if (eq last-command this-command)
+      (delete-horizontal-space)))
+(global-set-key "\C-e" 'my-end-of-line)
+
+(defun my-move-beginning-of-line ()
+  (interactive)
+  (if (bolp)
+      (back-to-indentation)
+      (beginning-of-line)))
+
+(global-set-key "\C-a" 'my-move-beginning-of-line)
 
 (blink-cursor-mode 0)
 (show-paren-mode 1)
@@ -166,3 +180,12 @@
     (when file
       (find-file file))))
 (global-set-key (kbd "C-x C-r") 'recentf-ido-find-file)
+
+;; undo
+(require 'undohist)
+(undohist-initialize)
+(global-undo-tree-mode t)
+
+;; japanese input
+(require 'uim-leim)
+(setq default-input-method "japanese-anthy-utf8-uim")

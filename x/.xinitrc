@@ -2,8 +2,10 @@ xset r rate 200 80
 xrdb ~/.Xresources
 vmware-user-suid-wrapper
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-ibus-daemon -drx&
+# fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+fcitx&
+
 exec ratpoison
