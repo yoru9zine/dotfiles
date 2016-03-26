@@ -49,6 +49,7 @@ export PATH="$HOME/go/bin:$PATH"
 export GOPATH="$HOME/go"
 
 export PATH="$HOME/.cask/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 alias ls='ls --color=auto'
 

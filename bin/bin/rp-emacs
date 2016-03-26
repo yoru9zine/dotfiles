@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export LC_CTYPE=ja_JP.UTF-8
+exec /usr/bin/emacs $@

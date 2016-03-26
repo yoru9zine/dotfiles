@@ -1,8 +1,11 @@
 exec rpws init 9 -k
 
-bind c exec termite
-bind b exec chromium
-bind e exec sh -c 'LC_CTYPE=ja_JP.UTF8 emacs'
+bind c exec rp-run-or-raise termite "termite -e tmux"
+bind C-c exec rp-run-or-raise termite "termite -e tmux"
+bind C-b exec rp-run-or-raise w3m rp-w3m
+bind b exec rp-run-or-raise w3m rp-w3m
+bind e exec rp-run-or-raise emacs rp-emacs
+bind C-e exec rp-run-or-raise emacs rp-emacs
 bind v ratclick 2
 bind C-v ratclick 2
 bind M-k delete
@@ -16,8 +19,8 @@ bind C-k focusup
 bind j focusdown
 bind C-j focusdown
 
-bind L rpwsn
-bind H rpwsp
+bind N rpwsn
+bind P rpwsp
 
 bind M-1 exec rpws 1
 bind M-2 exec rpws 2

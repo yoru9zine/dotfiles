@@ -49,3 +49,4 @@
 (depends-on "ido-vertical-mode")
 (depends-on "undohist")
 (depends-on "undo-tree")
+(depends-on "smartparens")

@@ -185,3 +185,6 @@
 (require 'undohist)
 (undohist-initialize)
 (global-undo-tree-mode t)
+
+;; smartparens-mode
+(smartparens-global-mode t)
