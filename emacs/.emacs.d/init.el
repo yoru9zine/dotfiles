@@ -184,6 +184,9 @@
 ;; undo
 (require 'undohist)
 (undohist-initialize)
+(setq undohist-ignored-files
+      (append '("COMMIT_EDITMSG" "NOTES_EDITMSG" "MERGE_MSG" "TAG_EDITMSG")
+              undohist-ignored-files))
 (global-undo-tree-mode t)
 
 ;; smartparens-mode
