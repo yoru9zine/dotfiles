@@ -1,3 +1,4 @@
 #!/bin/sh
 
+trap '' SIGTSTP
 exec termite -t w3m -e "w3m /"

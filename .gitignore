@@ -6,15 +6,3 @@ emacs/.emacs.d/kkcrc
 emacs/.emacs.d/recentf
 emacs/.emacs.d/smex-items
 emacs/.emacs.d/undohist
-
-fcitx/.config/fcitx/cached_layout
-fcitx/.config/fcitx/clipboard
-fcitx/.config/fcitx/data
-fcitx/.config/fcitx/dbus
-fcitx/.config/fcitx/profile
-
-termite/.config/chromium/
-
-w3m/.w3m/cookie
-w3m/.w3m/history
-w3m/.w3m/w3m*
