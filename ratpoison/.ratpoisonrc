@@ -1,7 +1,7 @@
 exec rpws init 9 -k
 
-bind c exec rp-run-or-raise termite "termite -e tmux"
-bind C-c exec rp-run-or-raise termite "termite -e tmux"
+bind c exec rp-run-or-raise termite rp-term
+bind C-c exec rp-run-or-raise termite rp-term
 bind C-b exec rp-run-or-raise w3m rp-w3m
 bind b exec rp-run-or-raise w3m rp-w3m
 bind e exec rp-run-or-raise emacs rp-emacs
@@ -19,8 +19,10 @@ bind C-k focusup
 bind j focusdown
 bind C-j focusdown
 
-bind N rpwsn
-bind P rpwsp
+bind L rpwsn
+bind H rpwsp
+bind C-M-L rpwsmn
+bind C-M-H rpwsmp
 
 bind M-1 exec rpws 1
 bind M-2 exec rpws 2
@@ -31,3 +33,8 @@ bind M-6 exec rpws 6
 bind M-7 exec rpws 7
 bind M-8 exec rpws 8
 bind M-9 exec rpws 9
+
+bind C-J exchangedown
+bind C-K exchangeup
+bind C-L exchangeright
+bind C-H exchangeleft

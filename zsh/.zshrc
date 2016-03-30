@@ -63,3 +63,6 @@ function pcd {
 }
 zle -N pcd
 bindkey '^xp' pcd
+
+keychain
+source $(ls ~/.keychain/*-sh)

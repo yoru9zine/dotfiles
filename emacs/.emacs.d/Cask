@@ -50,3 +50,4 @@
 (depends-on "undohist")
 (depends-on "undo-tree")
 (depends-on "smartparens")
+(depends-on "escreen")

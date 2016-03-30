@@ -191,3 +191,13 @@
 
 ;; smartparens-mode
 (smartparens-global-mode t)
+
+;; escreen
+(define-key global-map (kbd "C-z") nil)
+(setq escreen-prefix-char (kbd "C-z"))
+(require 'escreen)
+(setq escreen-mode-line-format '(escreen-number-mode ("[" escreen-current-screen-string "]")))
+(escreen-install)
+(add-hook 'escreen-goto-screen-hook
+          'escreen-enable-number-mode-if-more-than-one-screen)
+
