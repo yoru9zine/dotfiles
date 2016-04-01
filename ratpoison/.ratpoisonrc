@@ -4,8 +4,12 @@ bind c exec rp-run-or-raise termite rp-term
 bind C-c exec rp-run-or-raise termite rp-term
 bind C-b exec rp-run-or-raise w3m rp-w3m
 bind b exec rp-run-or-raise w3m rp-w3m
+bind C-g exec rp-run-or-raise Chromium chromium
+bind g exec rp-run-or-raise Chromium chromium
 bind e exec rp-run-or-raise emacs rp-emacs
 bind C-e exec rp-run-or-raise emacs rp-emacs
+bind d exec rp-run-or-raise Zeal zeal
+bind C-d exec rp-run-or-raise Zeal zeal
 bind v ratclick 2
 bind C-v ratclick 2
 bind M-k delete

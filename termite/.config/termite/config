@@ -1,5 +1,8 @@
 [options]
-font = Ricty Diminished Discord 8
+#font = Noto Sans Mono CJK TC Bold 7
+#font = Source Han Code JP M 6
+#font = Ricty Diminished Discord 8
+font = Ricty Discord 8
 #font = Terminus (TTF) 8
 #font = Droid Sans Mono 8
 
@@ -41,5 +44,5 @@ color6  = #259286
 color14 = #95a7a4
 
 # white
-color7  = #f1e6c2
-color15 = #868173
+color7  = #c2b58b
+color15 = #b2ad9f

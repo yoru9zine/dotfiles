@@ -5,17 +5,29 @@
 (setq initial-scratch-message nil)
 
 (set-face-attribute 'default nil
-                    :family "Ricty Diminished Discord"
+                    :family "Ricty Discord"
                     :height 90)
 (set-fontset-font (frame-parameter nil 'font)
                   'japanese-jisx0208
-                  (cons "Ricty Diminished Discord" "iso10646-1"))
+                  (cons "Ricty Discord" "iso10646-1"))
 (set-fontset-font (frame-parameter nil 'font)
                   'japanese-jisx0212
-                  (cons "Ricty Diminished Discord" "iso10646-1"))
+                  (cons "Ricty Discord" "iso10646-1"))
 (set-fontset-font (frame-parameter nil 'font)
                   'katakana-jisx0201
-                  (cons "Ricty Diminished Discord" "iso10646-1"))
+                  (cons "Ricty Discord" "iso10646-1"))
+;(set-face-attribute 'default nil
+;                    :family "Source Han Code JP M"
+;                    :height 70)
+;(set-fontset-font (frame-parameter nil 'font)
+;                  'japanese-jisx0208
+;                  (cons "Source Han Code JP M" "iso10646-1"))
+;(set-fontset-font (frame-parameter nil 'font)
+;                  'japanese-jisx0212
+;                  (cons "Source Han Code JP M" "iso10646-1"))
+;(set-fontset-font (frame-parameter nil 'font)
+;                  'katakana-jisx0201
+;                  (cons "Source Han Code JP M" "iso10646-1"))
 
 (keyboard-translate ?\C-h ?\C-?)
 (electric-indent-mode +1)
@@ -71,6 +83,7 @@
 (show-paren-mode 1)
 (global-hl-line-mode t)
 (setq-default tab-width 4 indent-tabs-mode nil)
+(set-default 'truncate-lines t)
 
 ;; whitespace
                                         ;(setq whitespace-style '(face           ; faceで可視化
@@ -201,3 +214,9 @@
 (add-hook 'escreen-goto-screen-hook
           'escreen-enable-number-mode-if-more-than-one-screen)
 
+;; multiple cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
