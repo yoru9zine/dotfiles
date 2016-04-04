@@ -1,6 +1,6 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
-(scroll-bar-mode 0)
+(scroll-bar-mode t)
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 
@@ -125,7 +125,7 @@
 (global-git-gutter-mode +1)
 
 ;; linum
-(global-yalinum-mode t)
+(global-nlinum-mode t)
 
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -220,3 +220,8 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; popwin
+(require 'popwin)
+(setq display-buffer-function 'popwin:display-buffer)
+(setq popwin:special-display-config '(("*Gofmt Errors*")))

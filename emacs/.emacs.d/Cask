@@ -27,7 +27,6 @@
 (depends-on "yasnippet")
 
 (depends-on "solarized-theme")
-(depends-on "yalinum")
 
 (depends-on "auto-complete")
 (depends-on "go-mode")
@@ -51,3 +50,4 @@
 (depends-on "undo-tree")
 (depends-on "smartparens")
 (depends-on "escreen")
+(depends-on "nlinum")
