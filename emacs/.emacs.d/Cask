@@ -51,3 +51,5 @@
 (depends-on "smartparens")
 (depends-on "escreen")
 (depends-on "nlinum")
+(depends-on "markdown-mode")
+(depends-on "anzu")

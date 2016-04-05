@@ -4,18 +4,42 @@
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 
-(set-face-attribute 'default nil
-                    :family "Ricty Discord"
-                    :height 90)
-(set-fontset-font (frame-parameter nil 'font)
-                  'japanese-jisx0208
-                  (cons "Ricty Discord" "iso10646-1"))
-(set-fontset-font (frame-parameter nil 'font)
-                  'japanese-jisx0212
-                  (cons "Ricty Discord" "iso10646-1"))
-(set-fontset-font (frame-parameter nil 'font)
-                  'katakana-jisx0201
-                  (cons "Ricty Discord" "iso10646-1"))
+                                        ;あああ
+                                        ;aaaaaa
+;(set-face-attribute 'default nil :family "Menlo" :height 80)
+;(set-fontset-font (frame-parameter nil 'font)
+;                  'japanese-jisx0208
+;                  (font-spec :family "Hiragino Maru Gothic ProN" :size 14))
+
+(when (display-graphic-p)
+  (set-face-attribute 'default nil :family "Monaco" :height 75)
+  (set-fontset-font (frame-parameter nil 'font)
+                    'japanese-jisx0208
+                    (font-spec :family "Hiragino Maru Gothic ProN" :size 12))
+  (set-fontset-font (frame-parameter nil 'font)
+                    'japanese-jisx0212
+                    (font-spec :family "Hiragino Maru Gothic ProN" :size 12))
+  (set-fontset-font (frame-parameter nil 'font)
+                    'katakana-jisx0201
+                    (font-spec :family "Hiragino Maru Gothic ProN" :size 12))
+  (add-to-list 'face-font-rescale-alist
+               '(".*Hiragino Maru Gothic ProN.*" . 1.2))
+  )
+
+;(set-face-attribute 'default nil
+;                    :family "Ricty Discord"
+;                    :height 90)
+;(set-fontset-font (frame-parameter nil 'font)
+;                  'japanese-jisx0208
+;                  (cons "Ricty Discord" "iso10646-1"))
+;(set-fontset-font (frame-parameter nil 'font)
+;                  'japanese-jisx0212
+;                  (cons "Ricty Discord" "iso10646-1"))
+;(set-fontset-font (frame-parameter nil 'font)
+;                  'katakana-jisx0021
+;                  (cons "Ricty Discord" "iso10646-1"))
+
+
 ;(set-face-attribute 'default nil
 ;                    :family "Source Han Code JP M"
 ;                    :height 70)
@@ -225,3 +249,8 @@
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 (setq popwin:special-display-config '(("*Gofmt Errors*")))
+
+;; anzu-mode
+(global-anzu-mode +1)
+(global-set-key (kbd "M-%") 'anzu-query-replace)
+(global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)

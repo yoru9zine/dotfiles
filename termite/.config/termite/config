@@ -1,10 +1,17 @@
 [options]
+#font = Hiragino Kaku Gothic Pro W3 7
+font = Hiragino Maru Gothic ProN 7
+font = Monaco 7
 #font = Noto Sans Mono CJK TC Bold 7
 #font = Source Han Code JP M 6
 #font = Ricty Diminished Discord 8
-font = Ricty Discord 8
+#font = Ricty Discord 8
 #font = Terminus (TTF) 8
 #font = Droid Sans Mono 8
+
+allow_bold = true
+cursor_blink = on
+cursor_shape = block
 
 # use terminal.sexy
 [colors]
