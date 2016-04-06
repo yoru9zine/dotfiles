@@ -37,9 +37,18 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion:*:default' menu select=2
 
+# prompt
+autoload -Uz vcs_info
+setopt prompt_subst
+# vcsの表示
+zstyle ':vcs_info:*' formats '%s][* %F{green}%b%f'
+zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
+# プロンプト表示直前にvcs_info呼び出し
+precmd() { vcs_info }
+# プロンプト表示
 # select prompt -p
 prompt fade blue
-
+PROMPT="${PROMPT}[\${vcs_info_msg_0_}] \$ "
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 eval "$(go env)"
