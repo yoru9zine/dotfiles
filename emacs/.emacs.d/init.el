@@ -72,10 +72,14 @@
 (setq solarized-height-plus-4 1.0)
 (load-theme 'solarized-light t)
 
-;; workaround for jump cursor in scroll
+;; workaround for jump cursor in scroll (scrolling performance issue)
 (setq scroll-step 1)
 (setq scroll-conservatively 100000)
 (setq auto-window-vscroll nil)
+(setq redisplay-dont-pause t)
+(setq jit-lock-defer-time 0.05)
+(setq-default cache-long-line-scans t)
+(setq line-move-visual nil)
 
 ;; clipboard
 (setq x-select-enable-clipboard t)
