@@ -29,7 +29,7 @@
 #
 DIR=${HOME}/.snippy
 APPS="xdotool xsel dmenu"
-DMENU_ARGS="-b"
+DMENU_ARGS="-l 1000 -p >>> -fn 'Monaco-12'"
 TMPFILE="/tmp/.snippy.tmp"; :>$TMPFILE
 # if nothing happens, try "xdotool click 2", "xdotool key ctrl+v" or "xdotool key ctrl+shift+v"
 GUIPASTE="xdotool click 2" 

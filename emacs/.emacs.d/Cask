@@ -53,3 +53,4 @@
 (depends-on "nlinum")
 (depends-on "markdown-mode")
 (depends-on "anzu")
+(depends-on "yascroll")

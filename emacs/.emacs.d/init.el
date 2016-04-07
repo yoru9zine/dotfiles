@@ -1,6 +1,6 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
-(scroll-bar-mode t)
+(scroll-bar-mode 0)
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 
@@ -267,3 +267,7 @@
 ;; yas
 (yas-global-mode 1)
 (setq-default yas-snippet-dirs '("~/.emacs.d/snippets"))
+
+;; yascroll
+(require 'yascroll)
+(global-yascroll-bar-mode 1)

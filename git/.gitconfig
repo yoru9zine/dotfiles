@@ -2,3 +2,5 @@
   root = ~/src
   root = ~/go/src
   root = ~/dotfiles
+[url "https://"]
+	insteadOf = git://
