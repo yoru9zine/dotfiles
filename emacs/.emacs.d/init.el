@@ -255,9 +255,15 @@
 ;; popwin
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
-(setq popwin:special-display-config '(("*Gofmt Errors*")))
+(setq popwin:special-display-config '(
+                                      ("*Gofmt Errors*" :noselect t)
+                                      ))
 
 ;; anzu-mode
 (global-anzu-mode +1)
 (global-set-key (kbd "M-%") 'anzu-query-replace)
 (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
+
+;; yas
+(yas-global-mode 1)
+(setq-default yas-snippet-dirs '("~/.emacs.d/snippets"))
