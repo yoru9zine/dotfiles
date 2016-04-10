@@ -4,3 +4,5 @@ binding "NoKeyboardNavigation" {
     unbind "<ctrl>w"
 }
 class "*" binding "NoKeyboardNavigation"
+
+gtk-font-name = "Monaco 8"
