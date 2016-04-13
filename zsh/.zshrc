@@ -60,6 +60,8 @@ export GOPATH="$HOME/go"
 export PATH="$HOME/.cask/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
+export VISUAL=vim
+
 alias ls='ls --color=auto'
 
 test -e ~/.zshrc_local && source ~/.zshrc_local

@@ -78,7 +78,7 @@ run(){
   else
     ${FILE} &> $TMPFILE # execute as bashcommand
   fi
-  xdotool type "$(cat ${TMPFILE})"
+  xdotool type --delay 1ms "$(cat ${TMPFILE})"
 }
 
 

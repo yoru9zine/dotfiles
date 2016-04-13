@@ -1,0 +1,11 @@
+#!/bin/bash
+
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
+DMENU="dmenu -i -l 1000 -fn ヒラギノ角ゴシック-8 -p Entry>"
+SITE=$(1p -l | $DMENU)
+
+xdotool type --delay 2ms "$(1p -u "${SITE}")"
+xdotool key --delay 2ms 'Tab'
+xdotool key --delay 2ms type --delay 1ms "$(1p -p "${SITE}")"

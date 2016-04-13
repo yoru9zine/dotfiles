@@ -1,11 +1,18 @@
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 
-                                        ;あああ
-                                        ;aaaaaa
+                                        ;ああああ
+                                        ;aaaaaaaa
 ;(set-face-attribute 'default nil :family "Menlo" :height 80)
 ;(set-fontset-font (frame-parameter nil 'font)
 ;                  'japanese-jisx0208
@@ -15,15 +22,15 @@
   (set-face-attribute 'default nil :family "Monaco" :height 75)
   (set-fontset-font (frame-parameter nil 'font)
                     'japanese-jisx0208
-                    (font-spec :family "Hiragino Maru Gothic ProN" :size 12))
+                    (font-spec :family "Hiragino Kaku Gothic ProN" :size 12))
   (set-fontset-font (frame-parameter nil 'font)
                     'japanese-jisx0212
-                    (font-spec :family "Hiragino Maru Gothic ProN" :size 12))
+                    (font-spec :family "Hiragino Kaku Gothic ProN" :size 12))
   (set-fontset-font (frame-parameter nil 'font)
                     'katakana-jisx0201
-                    (font-spec :family "Hiragino Maru Gothic ProN" :size 12))
+                    (font-spec :family "Hiragino Kaku Gothic ProN" :size 12))
   (add-to-list 'face-font-rescale-alist
-               '(".*Hiragino Maru Gothic ProN.*" . 1.2))
+               '(".*Hiragino Kaku Gothic ProN.*" . 1.2))
   )
 
 ;(set-face-attribute 'default nil
@@ -112,29 +119,30 @@
 (global-hl-line-mode t)
 (setq-default tab-width 4 indent-tabs-mode nil)
 (set-default 'truncate-lines t)
-
-;; whitespace
-;; whitespace
+;
+; whitespace
 ;; 全角スペース タブ trailing-spacesを目立たせる
 (require 'whitespace)
 ;; space-markとtab-mark、それからspacesとtrailingを対象とする
-(setq whitespace-style '(space-mark tab-mark face spaces trailing))
+(setq whitespace-style '(space-mark tab-mark face spaces trailing newline newline-mark))
 (setq whitespace-display-mappings
       '(
-        ;; (space-mark   ?\     [?\u00B7]     [?.]) ; space - centered dot
-        (space-mark   ?\xA0  [?\u00A4]     [?_]) ; hard space - currency
-        (space-mark   ?\x8A0 [?\x8A4]      [?_]) ; hard space - currency
-        (space-mark   ?\x920 [?\x924]      [?_]) ; hard space - currency
-        (space-mark   ?\xE20 [?\xE24]      [?_]) ; hard space - currency
-        (space-mark   ?\xF20 [?\xF24]      [?_]) ; hard space - currency
-        (space-mark ?\u3000 [?\u25a1] [?_ ?_]) ; full-width-space - square
+        ;(space-mark   ?\      [?\u00B7]     [?.])    ; space - centered dot
+        (space-mark   ?\u2001 [?\u00B7]     [?.])    ; space - centered dot
+        (space-mark   ?\u2003 [?\u00B7]     [?.])    ; space - centered dot
+        (space-mark   ?\xA0   [?\u00A4]     [?_])    ; hard space - currency
+        (space-mark   ?\x8A0  [?\x8A4]      [?_])    ; hard space - currency
+        (space-mark   ?\x920  [?\x924]      [?_])    ; hard space - currency
+        (space-mark   ?\xE20  [?\xE24]      [?_])    ; hard space - currency
+        (space-mark   ?\xF20  [?\xF24]      [?_])    ; hard space - currency
+        (space-mark   ?\u3000 [?\u25a1]     [?_ ?_]) ; full-width-space - square
         ;; NEWLINE is displayed using the face `whitespace-newline'
-        ;; (newline-mark ?\n    [?$ ?\n])  ; eol - dollar sign
-        ;; (newline-mark ?\n    [?\u21B5 ?\n] [?$ ?\n]) ; eol - downwards arrow
-        ;; (newline-mark ?\n    [?\u00B6 ?\n] [?$ ?\n]) ; eol - pilcrow
-        ;; (newline-mark ?\n    [?\x8AF ?\n]  [?$ ?\n]) ; eol - overscore
-        ;; (newline-mark ?\n    [?\x8AC ?\n]  [?$ ?\n]) ; eol - negation
-        ;; (newline-mark ?\n    [?\x8B0 ?\n]  [?$ ?\n]) ; eol - grade
+        ;(newline-mark ?\n    [?$ ?\n])  ; eol - dollar sign
+        (newline-mark ?\n    [?\u21B5 ?\n] [?$ ?\n]) ; eol - downwards arrow
+        ;(newline-mark ?\n    [?\u00B6 ?\n] [?$ ?\n]) ; eol - pilcrow
+        ;(newline-mark ?\n    [?\x8AF ?\n]  [?$ ?\n]) ; eol - overscore
+        ;(newline-mark ?\n    [?\x8AC ?\n]  [?$ ?\n]) ; eol - negation
+        ;(newline-mark ?\n    [?\x8B0 ?\n]  [?$ ?\n]) ; eol - grade
         ;;
         ;; WARNING: the mapping below has a problem.
         ;; When a TAB occupies exactly one column, it will display the
@@ -144,14 +152,38 @@
         (tab-mark     ?\t    [?\u00BB ?\t] [?\\ ?\t]) ; tab - left quote mark
         ))
 ;; whitespace-spaceの定義を全角スペースにし、色をつけて目立たせる
-(setq whitespace-space-regexp "\\(\u3000+\\)")
-(set-face-foreground 'whitespace-space "cyan")
+;; (setq whitespace-space-regexp "\\( |　+| | |\u3000+\\)")
+(set-face-foreground 'whitespace-space "LightGrey")
 (set-face-background 'whitespace-space 'nil)
-;; whitespace-trailingを色つきアンダーラインで目立たせる
-(set-face-underline  'whitespace-trailing t)
-(set-face-foreground 'whitespace-trailing "cyan")
+
+(set-face-foreground 'whitespace-hspace "LightGrey")
+(set-face-background 'whitespace-hspace 'nil)
+
+(set-face-foreground 'whitespace-tab "LightGrey")
+(set-face-background 'whitespace-tab 'nil)
+
+(set-face-foreground 'whitespace-newline  "LightGrey")
+(set-face-background 'whitespace-newline 'nil)
+
+(set-face-foreground 'whitespace-trailing "LightGrey")
 (set-face-background 'whitespace-trailing 'nil)
-(global-whitespace-mode 1)
+
+(set-face-foreground 'whitespace-line "LightGrey")
+(set-face-background 'whitespace-line nil)
+(set-face-foreground 'whitespace-space-before-tab "LightGrey")
+(set-face-background 'whitespace-space-before-tab nil)
+(set-face-foreground 'whitespace-indentation "LightGrey")
+(set-face-background 'whitespace-indentation nil)
+(set-face-foreground 'whitespace-empty "LightGrey")
+(set-face-background 'whitespace-empty nil)
+(set-face-foreground 'whitespace-space-after-tab "LightGrey")
+(set-face-background 'whitespace-space-after-tab nil)
+
+(set-face-underline  'whitespace-trailing t)
+
+;; whitespace-trailingを色つきアンダーラインで目立たせる
+(global-whitespace-mode t)
+
 ;; 保存前に自動でクリーンアップ
 ;(setq whitespace-action '(auto-cleanup))
 
@@ -187,6 +219,7 @@
 
 ;; recentf
 ;; 自動保存
+(require 'sync-recentf)
 (when (require 'recentf-ext nil t)
   (setq recentf-max-saved-items 10000)
   (setq recentf-exclude '(".recentf"))
@@ -275,3 +308,60 @@
 ;; yascroll
 (require 'yascroll)
 (global-yascroll-bar-mode 1)
+
+;; persistent-scratch
+(persistent-scratch-setup-default)
+(persistent-scratch-autosave-mode 1)
+
+
+;; jump parensis
+(defun close-paren-at-point-p ()
+  "Check closed paren at point."
+  (let ((s (char-to-string (char-after (point)))))
+    (s-contains? s ")]}")))
+(defun not-paren-matching-at-point-p ()
+  "Check not matching paren at point."
+  (let ((s (char-to-string (char-after (point)))))
+    (not (s-contains? s "{}[]()"))))
+(defun goto-matching-paren ()
+  "Jump to matching paren."
+  (interactive)
+  (cond ((close-paren-at-point-p)
+         (forward-char)
+         (-if-let (p (show-paren--default))
+             (goto-char (nth 2 p))
+           (backward-char)))
+        ((not-paren-matching-at-point-p)
+         (when (search-forward-regexp "[(\\[\[{)}]" (point-at-eol) t 1)
+           (backward-char)))
+        (t
+         (-if-let (p (show-paren--default))
+             (goto-char (nth 2 p))))))
+(global-set-key (kbd "C-%") 'goto-matching-paren)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (bbdb yasnippet yascroll web-mode use-package undohist undo-tree sync-recentf solarized-theme smex smartparens recentf-ext projectile prodigy popwin persistent-scratch pallet nyan-mode nlinum neotree multiple-cursors markdown-mode magit ido-vertical-mode ido-ubiquitous idle-highlight-mode htmlize golint go-rename go-errcheck go-eldoc go-autocomplete git-gutter-fringe flycheck-cask expand-region exec-path-from-shell escreen drag-stuff auto-save-buffers-enhanced anzu))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; change modeline by focus
+(add-hook 'focus-out-hook
+      (lambda ()
+        (copy-face 'mode-line '--mode-line-backup)
+        (copy-face 'mode-line-inactive 'mode-line)))
+(add-hook 'focus-in-hook
+      (lambda ()
+        (copy-face '--mode-line-backup 'mode-line)))
+
+;; save cursor position
+(require 'saveplace)
+(setq-default save-place t)

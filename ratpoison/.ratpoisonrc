@@ -1,11 +1,13 @@
 exec rpws init 9 -k
 
-bind c exec rp-run-or-raise termite rp-term
-bind C-c exec rp-run-or-raise termite rp-term
+bind C-backslash exec rp-1p
+bind c exec rp-run-or-raise terminator rp-term
+bind C-c exec rp-run-or-raise terminator rp-term
 bind C-b exec rp-run-or-raise w3m rp-w3m
 bind b exec rp-run-or-raise w3m rp-w3m
 bind C-g exec rp-run-or-raise chromium chromium
 bind g exec rp-run-or-raise chromium chromium
+bind f exec rp-run-or-raise Navigator firefox
 bind e exec rp-run-or-raise emacs rp-emacs
 bind C-e exec rp-run-or-raise emacs rp-emacs
 bind d exec rp-run-or-raise zeal zeal
@@ -43,3 +45,6 @@ bind C-J exchangedown
 bind C-K exchangeup
 bind C-L exchangeright
 bind C-H exchangeleft
+
+set bgcolor black
+set fgcolor white

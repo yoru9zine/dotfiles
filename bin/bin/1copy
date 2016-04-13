@@ -1,0 +1,12 @@
+#!/bin/bash
+
+OPT=""
+[ "${1}" == "-u" ] && OPT=$1
+[ "${1}" == "-p" ] && OPT=$1
+
+[ -z "${OPT}" ] && exit
+
+DMENU="dmenu -i -l 1000 -fn ヒラギノ角ゴシック-8 -p Entry>"
+SITE=$(1p -l | $DMENU)
+
+1p "${OPT}" "${SITE}" | xsel -pb
