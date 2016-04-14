@@ -13,38 +13,45 @@
 
                                         ;ああああ
                                         ;aaaaaaaa
-;(set-face-attribute 'default nil :family "Menlo" :height 80)
-;(set-fontset-font (frame-parameter nil 'font)
-;                  'japanese-jisx0208
-;                  (font-spec :family "Hiragino Maru Gothic ProN" :size 14))
+(set-face-attribute 'default nil
+                    :family "Monaco" ;; font
+                    :height 75)    ;; font size
 
-(when (display-graphic-p)
-  (set-face-attribute 'default nil :family "Monaco" :height 75)
-  (set-fontset-font (frame-parameter nil 'font)
-                    'japanese-jisx0208
-                    (font-spec :family "Hiragino Kaku Gothic ProN" :size 12))
-  (set-fontset-font (frame-parameter nil 'font)
-                    'japanese-jisx0212
-                    (font-spec :family "Hiragino Kaku Gothic ProN" :size 12))
-  (set-fontset-font (frame-parameter nil 'font)
-                    'katakana-jisx0201
-                    (font-spec :family "Hiragino Kaku Gothic ProN" :size 12))
-  (add-to-list 'face-font-rescale-alist
-               '(".*Hiragino Kaku Gothic ProN.*" . 1.2))
-  )
+                                        ;(set-face-attribute 'default nil
+;                    :family "Ricty Discord" ;; font
+;                    :height 80)    ;; font size
 
 ;(set-face-attribute 'default nil
-;                    :family "Ricty Discord"
-;                    :height 90)
-;(set-fontset-font (frame-parameter nil 'font)
-;                  'japanese-jisx0208
-;                  (cons "Ricty Discord" "iso10646-1"))
-;(set-fontset-font (frame-parameter nil 'font)
-;                  'japanese-jisx0212
-;                  (cons "Ricty Discord" "iso10646-1"))
-;(set-fontset-font (frame-parameter nil 'font)
-;                  'katakana-jisx0021
-;                  (cons "Ricty Discord" "iso10646-1"))
+;                    :family "Source Han Code JP M" ;; font
+;                    :height 75)    ;; font size
+
+(when (display-graphic-p)
+;rendering speed が落ちるので見送り中
+;; (set-face-attribute 'default nil :family "Monaco" :height 75)
+;; (set-fontset-font (frame-parameter nil 'font)
+;;                   'japanese-jisx0208
+;;                   (font-spec :family "Hiragino Kaku Gothic Pro" :size 12))
+;; (set-fontset-font (frame-parameter nil 'font)
+;;                   'japanese-jisx0212
+;;                   (font-spec :family "Hiragino Kaku Gothic Pro" :size 12))
+;; (set-fontset-font (frame-parameter nil 'font)
+;;                   'katakana-jisx0201
+;;                   (font-spec :family "Hiragino Kaku Gothic Pro" :size 12))
+;; (add-to-list 'face-font-rescale-alist
+;;              '(".*Hiragino Kaku Gothic Pro.*" . 1.2))
+
+;; (set-face-attribute 'default nil
+;;                     :family "Ricty Discord"
+;;                     :height 90)
+;; (set-fontset-font (frame-parameter nil 'font)
+;;                   'japanese-jisx0208
+;;                   (cons "Ricty Discord" "iso10646-1"))
+;; (set-fontset-font (frame-parameter nil 'font)
+;;                   'japanese-jisx0212
+;;                   (cons "Ricty Discord" "iso10646-1"))
+;; (set-fontset-font (frame-parameter nil 'font)
+;;                   'katakana-jisx0201
+;;                   (cons "Ricty Discord" "iso10646-1"))
 
 
 ;(set-face-attribute 'default nil
@@ -59,6 +66,7 @@
 ;(set-fontset-font (frame-parameter nil 'font)
 ;                  'katakana-jisx0201
 ;                  (cons "Source Han Code JP M" "iso10646-1"))
+  )
 
 (keyboard-translate ?\C-h ?\C-?)
 (electric-indent-mode +1)
@@ -256,7 +264,7 @@
 
 (defun recentf-ido-find-file ()
   "Find a recent file using Ido."
-  (interactive)
+(interactive)
   (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
     (when file
       (find-file file))))
