@@ -373,3 +373,14 @@
 ;; save cursor position
 (require 'saveplace)
 (setq-default save-place t)
+
+;; js2-mode
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
+(flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
+(add-hook 'js2-jsx-mode-hook 'flycheck-mode)
+(setq-default js2-strict-missing-semi-warning nil)
+(require 'auto-complete-config)
+(ac-config-default)
+(add-to-list 'ac-modes 'js2-jsx-mode)

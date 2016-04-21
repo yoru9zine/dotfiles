@@ -6,3 +6,4 @@ emacs/.emacs.d/kkcrc
 emacs/.emacs.d/recentf
 emacs/.emacs.d/smex-items
 emacs/.emacs.d/undohist
+fcitx/.config/fcitx/conf/fcitx-classic-ui.config

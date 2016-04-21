@@ -6,6 +6,6 @@ eval "$(anyenv init -)"
 DMENU="dmenu -i -l 1000 -fn ヒラギノ角ゴシック-8 -p Entry>"
 SITE=$(1p -l | $DMENU)
 
-xdotool type --delay 10ms "$(1p -u "${SITE}")"
-xdotool key --delay 10ms 'Tab'
-xdotool key --delay 10ms type --delay 1ms "$(1p -p "${SITE}")"
+xdotool type --delay 15ms "$(1p -u "${SITE}")"
+xdotool key --delay 15ms 'Tab'
+xdotool key --delay 15ms type --delay 1ms "$(1p -p "${SITE}")"

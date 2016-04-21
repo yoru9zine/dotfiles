@@ -63,6 +63,7 @@ export PATH="$HOME/bin:$PATH"
 export VISUAL=vim
 
 alias ls='ls --color=auto'
+alias vi=vim
 
 test -e ~/.zshrc_local && source ~/.zshrc_local
 

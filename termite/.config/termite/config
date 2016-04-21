@@ -1,7 +1,7 @@
 [options]
 #font = Hiragino Kaku Gothic Pro W3 7
-font = Hiragino Maru Gothic ProN 7
-font = Monaco 7
+#font = Hiragino Maru Gothic ProN 7
+font = Monaco 6
 #font = Noto Sans Mono CJK TC Bold 7
 #font = Source Han Code JP M 6
 #font = Ricty Diminished Discord 8
