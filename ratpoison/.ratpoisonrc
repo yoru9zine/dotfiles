@@ -48,3 +48,5 @@ bind C-H exchangeleft
 
 set bgcolor black
 set fgcolor white
+
+set font ricty-16

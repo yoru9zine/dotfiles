@@ -23,6 +23,8 @@ key.suspendKey           = "undefined";
 
 // ================================= Hooks ================================= //
 
+
+
 // ============================= Key bindings ============================== //
 
 key.setGlobalKey('C-\'', function (ev) {
@@ -68,3 +70,7 @@ key.setEditKey('C-n', function (ev) {
 key.setEditKey('C-p', function (ev) {
     command.previousLine(ev);
 }, 'Previous line');
+
+key.setEditKey('C-d', function (ev) {
+    goDoCommand("cmd_deleteCharForward");
+}, 'Delete forward char');

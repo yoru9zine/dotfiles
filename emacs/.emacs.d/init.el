@@ -69,6 +69,8 @@
   )
 
 (keyboard-translate ?\C-h ?\C-?)
+;; stop window close when C-[...
+(global-set-key (kbd "M-ESC ESC") 'keyboard-quit)
 (electric-indent-mode +1)
 
 (setq make-backup-files nil)
