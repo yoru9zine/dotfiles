@@ -36,12 +36,15 @@
 (depends-on "go-rename")
 (depends-on "golint")
 
+(depends-on "rust-mode")
+
 (depends-on "js2-mode")
 
 (depends-on "git-gutter-fringe")
 (depends-on "magit")
 
 (depends-on "neotree")
+(depends-on "open-junk-file")
 (depends-on "recentf-ext")
 (depends-on "auto-save-buffers-enhanced")
 (depends-on "windmove")

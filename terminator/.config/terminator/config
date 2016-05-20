@@ -1,6 +1,6 @@
 [global_config]
   borderless = True
-  custom_url_handler = firefox
+  custom_url_handler = chromium
   enabled_plugins = ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   title_font = Monaco 7
   title_inactive_bg_color = "#001e27"

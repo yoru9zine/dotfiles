@@ -386,3 +386,18 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-modes 'js2-jsx-mode)
+
+
+;; open-junk-file
+(require 'open-junk-file)
+(setq open-junk-file-format "junk/%Y-%m-%d-%H%M%S.")
+
+
+;; markdown
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
