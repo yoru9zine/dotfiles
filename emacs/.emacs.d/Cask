@@ -39,6 +39,7 @@
 (depends-on "rust-mode")
 
 (depends-on "js2-mode")
+(depends-on "json-mode")
 
 (depends-on "git-gutter-fringe")
 (depends-on "magit")
