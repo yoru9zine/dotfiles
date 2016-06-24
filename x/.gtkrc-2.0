@@ -7,3 +7,5 @@ binding "NoKeyboardNavigation" {
 class "*" binding "NoKeyboardNavigation"
 
 gtk-font-name = "Monaco 8"
+gtk-theme-name = "Arc"
+

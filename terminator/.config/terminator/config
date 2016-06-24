@@ -12,6 +12,7 @@
 [keybindings]
   broadcast_all = <Primary><Shift>a
   full_screen = None
+  layout_launcher = None
 [layouts]
   [[default]]
     [[[child1]]]
