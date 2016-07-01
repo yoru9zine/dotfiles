@@ -8,6 +8,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 fcitx&
 twmnd&
-compton -b --conf ~/.compton.conf &
+#compton -b --conf ~/.compton.conf &
 
-exec ratpoison
+#exec ratpoison
+exec i3

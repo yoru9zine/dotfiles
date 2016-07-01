@@ -10,13 +10,25 @@
 (scroll-bar-mode 0)
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
-
+(setq column-number-mode t)
                                         ;ああああ
                                         ;aaaaaaaa
 (set-face-attribute 'default nil
                     :family "Monaco" ;; font
                     :height 75)    ;; font size
 
+(defun font-monaco()
+  (interactive)
+  (set-face-attribute 'default nil
+                      :family "Monaco" ;; font
+                      :height 75)
+  )
+(defun font-ricty()
+  (interactive)
+(set-face-attribute 'default nil
+                    :family "Ricty" ;; font
+                    :height 90)
+  )
                                         ;(set-face-attribute 'default nil
 ;                    :family "Ricty Discord" ;; font
 ;                    :height 80)    ;; font size
