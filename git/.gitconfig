@@ -4,3 +4,5 @@
   root = ~/dotfiles
 [url "http://"]
 	insteadOf = git://
+[diff]
+	compactionHeuristic = true

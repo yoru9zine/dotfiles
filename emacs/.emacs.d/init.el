@@ -13,10 +13,6 @@
 (setq column-number-mode t)
                                         ;ああああ
                                         ;aaaaaaaa
-(set-face-attribute 'default nil
-                    :family "Monaco" ;; font
-                    :height 75)    ;; font size
-
 (defun font-monaco()
   (interactive)
   (set-face-attribute 'default nil
@@ -28,7 +24,8 @@
 (set-face-attribute 'default nil
                     :family "Ricty" ;; font
                     :height 90)
-  )
+)
+(font-ricty)
                                         ;(set-face-attribute 'default nil
 ;                    :family "Ricty Discord" ;; font
 ;                    :height 80)    ;; font size
@@ -254,8 +251,14 @@
 
 ;; auto-save
 (require 'auto-save-buffers-enhanced)
-(setq auto-save-buffers-enhanced-interval 0.5)
+(setq auto-save-buffers-enhanced-interval 5)
 (auto-save-buffers-enhanced t)
+
+;; save on focus lose
+(defun save-all ()
+  (interactive)
+  (save-some-buffers t))
+(add-hook 'focus-out-hook 'save-all)
 
 ;; ido
 (require 'ido)
@@ -297,7 +300,7 @@
 
 ;; escreen
 (define-key global-map (kbd "C-z") nil)
-(setq escreen-prefix-char (kbd "C-z"))
+(setq escreen-prefix-char (kbd "C-t"))
 (require 'escreen)
 (setq escreen-mode-line-format '(escreen-number-mode ("[" escreen-current-screen-string "]")))
 (escreen-install)
