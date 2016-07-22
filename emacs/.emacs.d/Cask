@@ -35,6 +35,7 @@
 (depends-on "go-eldoc")
 (depends-on "go-rename")
 (depends-on "golint")
+(depends-on "go-guru")
 
 (depends-on "rust-mode")
 

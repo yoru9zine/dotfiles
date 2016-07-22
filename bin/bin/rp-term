@@ -1,4 +1,4 @@
 #!/bin/sh
 
-#exec termite -e "sh -c 'tmux attach || tmux'"
-exec terminator -T terminator -e "sh -c 'tmux attach || tmux'"
+exec termite -e "sh -c 'tmux attach || tmux'"
+#exec terminator -T terminator -e "sh -c 'tmux attach || tmux'"

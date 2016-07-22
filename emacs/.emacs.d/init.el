@@ -17,7 +17,7 @@
   (interactive)
   (set-face-attribute 'default nil
                       :family "Monaco" ;; font
-                      :height 75)
+                      :height 90)
   )
 (defun font-ricty()
   (interactive)
@@ -25,7 +25,7 @@
                     :family "Ricty" ;; font
                     :height 90)
 )
-(font-ricty)
+(font-monaco)
                                         ;(set-face-attribute 'default nil
 ;                    :family "Ricty Discord" ;; font
 ;                    :height 80)    ;; font size
@@ -156,8 +156,8 @@
         (space-mark   ?\xF20  [?\xF24]      [?_])    ; hard space - currency
         (space-mark   ?\u3000 [?\u25a1]     [?_ ?_]) ; full-width-space - square
         ;; NEWLINE is displayed using the face `whitespace-newline'
-        ;(newline-mark ?\n    [?$ ?\n])  ; eol - dollar sign
-        (newline-mark ?\n    [?\u21B5 ?\n] [?$ ?\n]) ; eol - downwards arrow
+        (newline-mark ?\n    [?$ ?\n])  ; eol - dollar sign
+        ;(newline-mark ?\n    [?\u21B5 ?\n] [?$ ?\n]) ; eol - downwards arrow
         ;(newline-mark ?\n    [?\u00B6 ?\n] [?$ ?\n]) ; eol - pilcrow
         ;(newline-mark ?\n    [?\x8AF ?\n]  [?$ ?\n]) ; eol - overscore
         ;(newline-mark ?\n    [?\x8AC ?\n]  [?$ ?\n]) ; eol - negation
@@ -229,6 +229,7 @@
 ;  '(require 'golint)
   (require 'go-autocomplete)
   (add-hook 'go-mode-hook 'go-eldoc-setup)
+  (add-hook 'go-mode-hook 'go-guru-hl-identifier-mode)
   (define-key go-mode-map (kbd "M-.") 'godef-jump)
   (define-key go-mode-map (kbd "M-*") 'pop-tag-mark))
 

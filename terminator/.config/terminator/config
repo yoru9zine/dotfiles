@@ -28,8 +28,7 @@
     background_color = "#fcf4dc"
     background_image = None
     cursor_color = "#536870"
-#    font = Monaco 7
-    font = Ricty 8
+    font = Ricty 9
     foreground_color = "#536870"
     icon_bell = False
     palette = "#002831:#d11c24:#6c810a:#a57706:#2176c7:#c61c6f:#259286:#c2b58b:#001e27:#bd3613:#90bb85:#bbb57a:#76bcc3:#de70ae:#95a7a4:#b2ad9f"
