@@ -37,6 +37,8 @@
 (depends-on "golint")
 (depends-on "go-guru")
 
+(depends-on "erlang")
+
 (depends-on "rust-mode")
 
 (depends-on "js2-mode")

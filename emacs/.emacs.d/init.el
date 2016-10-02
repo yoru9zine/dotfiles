@@ -11,6 +11,7 @@
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 (setq column-number-mode t)
+(defalias 'yes-or-no-p 'y-or-n-p)
                                         ;ああああ
                                         ;aaaaaaaa
 (defun font-monaco()
@@ -19,6 +20,14 @@
                       :family "Monaco" ;; font
                       :height 90)
   )
+
+(defun font-menlo()
+  (interactive)
+  (set-face-attribute 'default nil
+                      :family "Menlo" ;; font
+                      :height 90)
+  )
+
 (defun font-ricty()
   (interactive)
 (set-face-attribute 'default nil
@@ -78,6 +87,8 @@
   )
 
 (keyboard-translate ?\C-h ?\C-?)
+(global-set-key "\C-h" 'backward-delete-char)
+
 ;; stop window close when C-[...
 (global-set-key (kbd "M-ESC ESC") 'keyboard-quit)
 (electric-indent-mode +1)
@@ -417,3 +428,20 @@
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
+
+;; textlint
+(flycheck-define-checker textlint
+  "A linter for prose."
+  :command ("textlint" "--format" "unix" source-inplace)
+  :error-patterns
+  ((warning line-start (file-name) ":" line ":" column ": "
+            (id (one-or-more (not (any " "))))
+            (message (one-or-more not-newline)
+                     (zero-or-more "\n" (any " ") (one-or-more not-newline)))
+            line-end))
+  :modes (text-mode markdown-mode gfm-mode))
+(add-to-list 'flycheck-checkers 'textlint)
+(add-hook 'gfm-mode-hook 'flycheck-mode)
+(add-hook 'markdown-mode-hook 'flycheck-mode)
+
+(server-start)

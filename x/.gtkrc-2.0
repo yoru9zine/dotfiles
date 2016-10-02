@@ -2,7 +2,6 @@ gtk-key-theme-name = "Emacs"
 
 binding "NoKeyboardNavigation" {
     unbind "<ctrl>w"
-    unbind "<ctrl>a"
 }
 class "*" binding "NoKeyboardNavigation"
 
