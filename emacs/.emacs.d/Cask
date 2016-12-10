@@ -66,3 +66,4 @@
 (depends-on "sync-recentf")
 (depends-on "persistent-scratch")
 
+(depends-on "bbdb")

@@ -30,11 +30,11 @@
 
 (defun font-ricty()
   (interactive)
-(set-face-attribute 'default nil
-                    :family "Ricty" ;; font
-                    :height 90)
-)
-(font-monaco)
+  (set-face-attribute 'default nil
+                      :family "Ricty" ;; font
+                      :height 90)
+  )
+(font-ricty)
                                         ;(set-face-attribute 'default nil
 ;                    :family "Ricty Discord" ;; font
 ;                    :height 80)    ;; font size
@@ -391,13 +391,13 @@
  )
 
 ;; change modeline by focus
-(add-hook 'focus-out-hook
-      (lambda ()
-        (copy-face 'mode-line '--mode-line-backup)
-        (copy-face 'mode-line-inactive 'mode-line)))
-(add-hook 'focus-in-hook
-      (lambda ()
-        (copy-face '--mode-line-backup 'mode-line)))
+;(add-hook 'focus-out-hook
+;      (lambda ()
+;        (copy-face 'mode-line '--mode-line-backup)
+;        (copy-face 'mode-line-inactive 'mode-line)))
+;(add-hook 'focus-in-hook
+;      (lambda ()
+;        (copy-face '--mode-line-backup 'mode-line)))
 
 ;; save cursor position
 (require 'saveplace)
@@ -430,17 +430,17 @@
   :init (setq markdown-command "multimarkdown"))
 
 ;; textlint
-(flycheck-define-checker textlint
-  "A linter for prose."
-  :command ("textlint" "--format" "unix" source-inplace)
-  :error-patterns
-  ((warning line-start (file-name) ":" line ":" column ": "
-            (id (one-or-more (not (any " "))))
-            (message (one-or-more not-newline)
-                     (zero-or-more "\n" (any " ") (one-or-more not-newline)))
-            line-end))
-  :modes (text-mode markdown-mode gfm-mode))
-(add-to-list 'flycheck-checkers 'textlint)
+;; (flycheck-define-checker textlint
+;;   "A linter for prose."
+;;   :command ("textlint" "--format" "unix" source-inplace)
+;;   :error-patterns
+;;   ((warning line-start (file-name) ":" line ":" column ": "
+;;             (id (one-or-more (not (any " "))))
+;;             (message (one-or-more not-newline)
+;;                      (zero-or-more "\n" (any " ") (one-or-more not-newline)))
+;;             line-end))
+;;   :modes (text-mode markdown-mode gfm-mode))
+;; (add-to-list 'flycheck-checkers 'textlint)
 (add-hook 'gfm-mode-hook 'flycheck-mode)
 (add-hook 'markdown-mode-hook 'flycheck-mode)
 

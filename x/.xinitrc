@@ -12,4 +12,6 @@ compton -b --conf ~/.compton.conf & # compton make rendering slow...
 hsetroot -solid black
 
 #exec ratpoison
+export GDK_SCALE=2
+xrandr --dpi 220
 exec i3
