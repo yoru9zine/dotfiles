@@ -18,23 +18,24 @@
   (interactive)
   (set-face-attribute 'default nil
                       :family "Monaco" ;; font
-                      :height 90)
+                      :height 100)
   )
 
 (defun font-menlo()
   (interactive)
   (set-face-attribute 'default nil
                       :family "Menlo" ;; font
-                      :height 90)
+                      :height 100)
   )
 
 (defun font-ricty()
   (interactive)
   (set-face-attribute 'default nil
                       :family "Ricty" ;; font
-                      :height 90)
+                      :height 100)
   )
-(font-ricty)
+(font-monaco)
+
                                         ;(set-face-attribute 'default nil
 ;                    :family "Ricty Discord" ;; font
 ;                    :height 80)    ;; font size
@@ -45,18 +46,18 @@
 
 (when (display-graphic-p)
 ;rendering speed が落ちるので見送り中
-;; (set-face-attribute 'default nil :family "Monaco" :height 75)
-;; (set-fontset-font (frame-parameter nil 'font)
-;;                   'japanese-jisx0208
-;;                   (font-spec :family "Hiragino Kaku Gothic Pro" :size 12))
-;; (set-fontset-font (frame-parameter nil 'font)
-;;                   'japanese-jisx0212
-;;                   (font-spec :family "Hiragino Kaku Gothic Pro" :size 12))
-;; (set-fontset-font (frame-parameter nil 'font)
-;;                   'katakana-jisx0201
-;;                   (font-spec :family "Hiragino Kaku Gothic Pro" :size 12))
-;; (add-to-list 'face-font-rescale-alist
-;;              '(".*Hiragino Kaku Gothic Pro.*" . 1.2))
+ (set-face-attribute 'default nil :family "Monaco" :height 90)
+ (set-fontset-font (frame-parameter nil 'font)
+                   'japanese-jisx0208
+                   (font-spec :family "Hiragino Kaku Gothic Pro" :size 32))
+ (set-fontset-font (frame-parameter nil 'font)
+                   'japanese-jisx0212
+                   (font-spec :family "Hiragino Kaku Gothic Pro" :size 32))
+ (set-fontset-font (frame-parameter nil 'font)
+                   'katakana-jisx0201
+                   (font-spec :family "Hiragino Kaku Gothic Pro" :size 32))
+ (add-to-list 'face-font-rescale-alist
+              '(".*Hiragino Kaku Gothic Pro.*" . 1.2))
 
 ;; (set-face-attribute 'default nil
 ;;                     :family "Ricty Discord"
@@ -218,11 +219,12 @@
 ;(setq whitespace-action '(auto-cleanup))
 
 ;; git
-(require 'git-gutter-fringe)
+;(require 'git-gutter-fringe)
+(require 'git-gutter)
 (global-git-gutter-mode +1)
 
 ;; linum
-(global-nlinum-mode t)
+;;(global-nlinum-mode t)
 
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -243,7 +245,8 @@
   (add-hook 'go-mode-hook 'go-guru-hl-identifier-mode)
   (define-key go-mode-map (kbd "M-.") 'godef-jump)
   (define-key go-mode-map (kbd "M-*") 'pop-tag-mark))
-
+(use-package go-mode
+  :config (use-package godoctor))
 
 ;; neotree
 (setq neo-theme 'ascii)

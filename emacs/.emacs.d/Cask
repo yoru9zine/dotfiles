@@ -36,6 +36,7 @@
 (depends-on "go-rename")
 (depends-on "golint")
 (depends-on "go-guru")
+(depends-on "godoctor")
 
 (depends-on "erlang")
 
