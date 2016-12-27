@@ -14,10 +14,11 @@ set smartindent
 set autoindent
 set hlsearch
 set showmatch
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
-"set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+"nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set listchars=tab:>\ ,trail:#,extends:>
 set list
+set clipboard=unnamedplus
 
 let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
@@ -44,6 +45,8 @@ call dein#add('Shougo/neosnippet-snippets')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('907th/vim-auto-save')
 call dein#add('justinmk/vim-dirvish')
+call dein#add('tpope/vim-surround')
+call dein#add("jiangmiao/auto-pairs")
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
