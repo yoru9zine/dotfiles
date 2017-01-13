@@ -1,7 +1,10 @@
 [options]
 #font = Hiragino Kaku Gothic Pro W3 7
 #font = Hiragino Maru Gothic ProN 7
+
 font = Monaco 9
+#font = GenEi Gothic M 9
+
 #font = Menlo 9.5
 #font = Noto Sans Mono CJK TC Bold 7
 #font = Source Han Code JP M 6

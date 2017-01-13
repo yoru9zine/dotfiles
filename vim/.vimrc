@@ -20,6 +20,9 @@ set listchars=tab:>\ ,trail:#,extends:>
 set list
 set clipboard=unnamedplus
 
+" for dirvish and auto chdir
+autocmd BufEnter * silent! lcd %:p:h
+
 let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
 nnoremap <Leader><Leader> :e#<CR>
@@ -46,7 +49,9 @@ call dein#add('Shougo/neocomplete.vim')
 call dein#add('907th/vim-auto-save')
 call dein#add('justinmk/vim-dirvish')
 call dein#add('tpope/vim-surround')
-call dein#add("jiangmiao/auto-pairs")
+call dein#add('jiangmiao/auto-pairs')
+call dein#add('glidenote/memolist.vim')
+call dein#add('ctrlpvim/ctrlp.vim')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -78,3 +83,14 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " autosave
 let g:auto_save = 1  " enable AutoSave on Vim startup
+
+
+" memolist
+let g:memolist_path = "~/memo"
+nnoremap <Leader>mn  :MemoNew<CR>
+nnoremap <Leader>ml  :MemoList<CR>
+nnoremap <Leader>mg  :MemoGrep<CR>
+
+" ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
