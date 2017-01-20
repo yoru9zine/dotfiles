@@ -15,8 +15,9 @@ set autoindent
 set hlsearch
 set showmatch
 "nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+"set listchars=eol:\ ,tab:>-,trail:~,extends:>,precedes:<
 set listchars=tab:>\ ,trail:#,extends:>
+"
 set list
 set clipboard=unnamedplus
 
@@ -26,6 +27,38 @@ autocmd BufEnter * silent! lcd %:p:h
 let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
 nnoremap <Leader><Leader> :e#<CR>
+
+" tab
+nnoremap <Leader>t :tabnew<CR>
+nnoremap <Leader>h gT<CR>
+nnoremap <Leader>l gt<CR>
+nnoremap tt :tabnew<CR>
+nnoremap tw :tabclose<CR>
+nnoremap tl gt<CR>
+nnoremap th gT<CR>
+
+" paste mode
+nnoremap <Leader>p :set paste<CR>p<CR>:set nopaste<CR>
+nnoremap <Leader>P :set paste<CR>P<CR>:set nopaste<CR>
+
+" ファイル名表示
+set statusline=%F
+" 変更チェック表示
+set statusline+=%m
+" 読み込み専用かどうか表示
+set statusline+=%r
+" ヘルプページなら[HELP]と表示
+set statusline+=%h
+" プレビューウインドウなら[Prevew]と表示
+set statusline+=%w
+" これ以降は右寄せ表示
+set statusline+=%=
+" 現在行数/全行数
+set statusline+=[LOW=%l/%L]
+" file encoding
+set statusline+=[ENC=%{&fileencoding}]
+" ステータスラインを常に表示(0:表示しない、1:2つ以上ウィンドウがある時だけ表示)
+set laststatus=2
 
 "dein Scripts-----------------------------
 if &compatible
@@ -52,6 +85,11 @@ call dein#add('tpope/vim-surround')
 call dein#add('jiangmiao/auto-pairs')
 call dein#add('glidenote/memolist.vim')
 call dein#add('ctrlpvim/ctrlp.vim')
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('ngmy/vim-rubocop')
+call dein#add('scrooloose/syntastic')
+call dein#add('vim-ruby/vim-ruby')
+call dein#add('vim-scripts/mru.vim')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -69,6 +107,9 @@ syntax enable
 "endif
 
 "End dein Scripts-------------------------
+
+" auto pair
+let g:AutoPairsMapSpace = 0
 
 " golang setup ---------------------------
 let g:go_highlight_functions = 1
@@ -94,3 +135,10 @@ nnoremap <Leader>mg  :MemoGrep<CR>
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" don't wait escape
+set ttimeoutlen=0
+
+" ruby
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers=['rubocop', 'mri']
