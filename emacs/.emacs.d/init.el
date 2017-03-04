@@ -34,15 +34,33 @@
                       :family "Ricty" ;; font
                       :height 100)
   )
-(font-monaco)
+(defun font-genei()
+  (interactive)
+  (set-face-attribute 'default nil
+                      :family "GenEi Gothic M" ;; font
+                      :height 90)
+  )
+;(font-genei)
 
-                                        ;(set-face-attribute 'default nil
-;                    :family "Ricty Discord" ;; font
-;                    :height 80)    ;; font size
+(create-fontset-from-ascii-font
+ "Monaco:size=25"
+ nil
+ "menlokakugo")
+(set-fontset-font
+ "fontset-menlokakugo"
+ 'unicode
+ (font-spec :family "Hiragino Kaku Gothic ProN" :size 30)
+ nil
+ 'append)
 
-;(set-face-attribute 'default nil
-;                    :family "Source Han Code JP M" ;; font
-;                    :height 75)    ;; font size
+(add-to-list 'default-frame-alist '(font . "fontset-menlokakugo"))
+(add-to-list 'initial-frame-alist '(font . "fontset-menlokakugo"))
+(add-to-list 'face-font-rescale-alist
+             '(".*Hiragino Kaku Gothic ProN.*" . 1.2))
+(add-hook 'after-init-hook
+          (lambda () (set-frame-font "fontset-menlokakugo")))
+
+
 
 (when (display-graphic-p)
 ;rendering speed が落ちるので見送り中
@@ -100,22 +118,23 @@
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
-(setq solarized-distinct-fringe-background t)
-(setq solarized-use-variable-pitch nil)
-(setq solarized-high-contrast-mode-line t)
-(setq solarized-height-minus-1 1.0)
-(setq solarized-height-plus-1 1.0)
-(setq solarized-height-plus-2 1.0)
-(setq solarized-height-plus-3 1.0)
-(setq solarized-height-plus-4 1.0)
-(load-theme 'solarized-light t)
+;(setq solarized-distinct-fringe-background t)
+;(setq solarized-use-variable-pitch nil)
+;(setq solarized-high-contrast-mode-line t)
+;(setq solarized-height-minus-1 1.0)
+;(setq solarized-height-plus-1 1.0)
+;(setq solarized-height-plus-2 1.0)
+;(setq solarized-height-plus-3 1.0)
+;(setq solarized-height-plus-4 1.0)
+;(load-theme 'solarized-light t)
+(load-theme 'sanityinc-solarized-light t)
 
 ;; workaround for jump cursor in scroll (scrolling performance issue)
 (setq scroll-step 1)
 (setq scroll-conservatively 100000)
 (setq auto-window-vscroll nil)
 (setq redisplay-dont-pause t)
-(setq jit-lock-defer-time 0.05)
+;(setq jit-lock-defer-time 0.05)
 (setq-default cache-long-line-scans t)
 (setq line-move-visual nil)
 
@@ -155,7 +174,7 @@
 ;; 全角スペース タブ trailing-spacesを目立たせる
 (require 'whitespace)
 ;; space-markとtab-mark、それからspacesとtrailingを対象とする
-(setq whitespace-style '(space-mark tab-mark face spaces trailing newline newline-mark))
+(setq whitespace-style '(space-mark tab-mark face spaces tabs trailing newline newline-mark))
 (setq whitespace-display-mappings
       '(
         ;(space-mark   ?\      [?\u00B7]     [?.])    ; space - centered dot
@@ -220,11 +239,14 @@
 
 ;; git
 ;(require 'git-gutter-fringe)
-(require 'git-gutter)
-(global-git-gutter-mode +1)
+;(require 'git-gutter) ; conflict with linum
+;(global-git-gutter-mode +1)
+(global-diff-hl-mode)
+(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+(unless (window-system) (diff-hl-margin-mode))
 
 ;; linum
-;;(global-nlinum-mode t)
+(global-nlinum-mode t)
 
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -446,5 +468,6 @@
 ;; (add-to-list 'flycheck-checkers 'textlint)
 (add-hook 'gfm-mode-hook 'flycheck-mode)
 (add-hook 'markdown-mode-hook 'flycheck-mode)
+
 
 (server-start)

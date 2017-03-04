@@ -26,7 +26,8 @@
 (depends-on "web-mode")
 (depends-on "yasnippet")
 
-(depends-on "solarized-theme")
+;(depends-on "solarized-theme")
+(depends-on "color-theme-sanityinc-solarized")
 
 (depends-on "auto-complete")
 (depends-on "go-mode")
@@ -46,6 +47,7 @@
 (depends-on "json-mode")
 
 (depends-on "git-gutter-fringe")
+(depends-on "diff-hl")
 (depends-on "magit")
 
 (depends-on "neotree")

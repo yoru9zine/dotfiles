@@ -1,0 +1,32 @@
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+[[plugins]]
+repo = '907th/vim-auto-save'
+[[plugins]]
+repo = 'fatih/vim-go'
+[[plugins]]
+repo = 'tpope/vim-surround'
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+[[plugins]]
+repo = 'glidenote/memolist.vim'
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+[[plugins]]
+repo = 'ngmy/vim-rubocop'
+[[plugins]]
+repo = 'scrooloose/syntastic'
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+[[plugins]]
+repo = 'vim-scripts/mru.vim'
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+[[plugins]]
+repo = 'cocopon/vaffle.vim'
